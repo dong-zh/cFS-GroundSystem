@@ -68,6 +68,8 @@ class SubsystemTelemetry(QDialog, Ui_GenericTelemetryDialog):
                 pass
             TlmField2 = datagram[itemStart:itemStart +
                                  int(tlmItemSize[tlmIndex])]
+
+            print(f"TlmField2: {TlmField2}")
             if TlmField2:
                 TlmField = unpack(TlmField1, TlmField2)
                 if tlmItemDisplayType[tlmIndex] == 'Dec':
